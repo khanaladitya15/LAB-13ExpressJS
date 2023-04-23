@@ -54,9 +54,11 @@ let articles = [
 ];
 
 // GET all articles
-app.get('/api/articles', (req, res) => {
-  res.json(articles);
+app.get('/', (req, res) => {
+  res.send('Welcome to the News API. Use /api/articles for fetching articles.');
 });
+
+
 
 // GET a specific article by ID
 app.get('/api/articles/:id', (req, res) => {
@@ -117,5 +119,5 @@ app.delete('/api/articles/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(`Server started on port http://localhost:${PORT}`);
 });
